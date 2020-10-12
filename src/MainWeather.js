@@ -50,7 +50,7 @@ const MainWeather = () => {
     return (
         <div className="Main-weather-component">
             <Card>
-                <Card.Header className="Card-Header" style={{backgroundColor: "#2a2a2a"}}>Weather Forrecast <a href="" className="close" style={{color: "#ffffff", fontSize:"30px", lineHeight: 1.5, fontWeight: 300, textDecoration: "none"}}>X</a></Card.Header>
+                <Card.Header className="Card-Header" style={{backgroundColor: "#2a2a2a"}}>Weather Forecast <a href="" className="close" style={{color: "#ffffff", fontSize:"30px", lineHeight: 1.5, fontWeight: 300, textDecoration: "none"}}>X</a></Card.Header>
                 <Card.Body>
                 <Card.Title className="Subtitle" style={{fontSize: 28, fontWeight: "bold", marginBottom: -6, marginLeft: -10}}>City</Card.Title>
                 <FormControl variant="filled" className={classes.formControl} style={{minWidth: 800}}>
