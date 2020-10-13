@@ -16,7 +16,7 @@ const DisplayWeather = (props) => {
         nextDay.setDate(nextDay.getDate() + i);
         let daysOfWeek = weekday[nextDay.getDay()];
         daySpan.push(daysOfWeek);
-        let datesOfTheWeek = month[nextDay.getMonth()];
+        let datesOfTheWeek = month[(nextDay.getMonth() - 1)];
         let stringDate = nextDay.toLocaleDateString().split("/");
         allDates.push(datesOfTheWeek + " " + stringDate[0]);
     };
