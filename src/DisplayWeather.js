@@ -2,20 +2,25 @@ import React from 'react';
 
 const DisplayWeather = (props) => {
     
+    // Receiving the API data and if loading is true or false in props
     const forecast = props.forecast;
     const loading = props.loading;
 
+    // Getting today's date, the days of the week, and months
     const today = new Date();
     const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     const month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Oct", "Nov", "Dec"];
     
+    // Setting 5 days to display the day of the week and dates in MM/DD
     let daySpan = [];
     let allDates = [];
     for (let i = 0; i < 5; i++){
         let nextDay = new Date(today);
         nextDay.setDate(nextDay.getDate() + i);
+        // Adding weekday for 5 days
         let daysOfWeek = weekday[nextDay.getDay()];
         daySpan.push(daysOfWeek);
+        // Date display for 5 days
         let datesOfTheWeek = month[(nextDay.getMonth() - 1)];
         let stringDate = nextDay.toLocaleDateString().split("/");
         allDates.push(datesOfTheWeek + " " + stringDate[0]);

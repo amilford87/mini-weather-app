@@ -11,10 +11,12 @@ import './App.css';
 
 const MainWeather = () => {
     
+    // Setting state
     const [city, setCity] = useState("Toronto&country=CA");
     const [forecast, setForecast] = useState(null);
     const [loading, setLoading] = useState(true);
 
+    // Doing the API call with the city passed in, setting the data as forecast in state and turning loading off when the data is available
     const getData = (async(city) => {
         const response = await fetch(`https://api.weatherbit.io/v2.0/forecast/daily?city=${city}&key=371d4e84f04f4e6eafe38174f3de11e5`)
         const data = await response.json();
@@ -23,10 +25,12 @@ const MainWeather = () => {
         console.log(data.data[0].datetime);
     });
 
+    // Loading the default API call when the app is first loaded
     useEffect(() => {
         getData(city);
     }, []);
 
+    // Styling the Material UI Card
     const useStyles = makeStyles((theme) => ({
         formControl: {
             margin: theme.spacing(1),
@@ -39,10 +43,12 @@ const MainWeather = () => {
     
     const classes = useStyles();
     
+    // Setting the selected city into state
     const handleChange = (event) => {
         setCity(event.target.value);
     };
 
+    // Making the API call for the selected city when clicking the Apply button
     const handleClick = () => {
         getData(city);
     }
